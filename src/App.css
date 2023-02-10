@@ -1,0 +1,29 @@
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #fff
+}
+
+.active {
+  background-color: red;
+  color: blue
+}
+
+.nofav {
+
+  border: 1px dashed #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 1.2rem;
+}

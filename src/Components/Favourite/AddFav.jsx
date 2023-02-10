@@ -95,7 +95,6 @@ function AddFav() {
             onChange={(e) => setTerm(e.target.value)}
           />
           <label htmlFor="floatingInputCustom">Search NPM</label>
-          {/* ! Radio Buttons */}
           <ListBox
             state={selectedOption}
             setSelectedOption={setSelectedOption}

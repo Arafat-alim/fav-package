@@ -28,7 +28,7 @@ function AddFav() {
       return JSON.parse(localFetch);
     }
   });
-  console.log(file[0].selectedOption);
+
   const fetchedApi = async (term) => {
     const res = await fetch(`https://api.npms.io/v2/search?q=${term}`);
     const packArr = await res.json();

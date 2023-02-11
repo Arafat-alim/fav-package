@@ -5,8 +5,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 import HasFav from "./Components/Favourite/HasFav";
 import AddFav from "./Components/Favourite/AddFav";
-import AddFavorite from "./Components/Favourite/AddFavorite";
-import Home from "./Components/Home";
 
 function App() {
   return (

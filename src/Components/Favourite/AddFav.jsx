@@ -18,7 +18,6 @@ function AddFav() {
   const [term, setTerm] = useState("");
   const [msg, setMsg] = useState("");
   const [showModal, setShowModal] = useState(false);
-  console.log(showModal);
 
   const debounceSearchTerm = useDebounce(term, 1500);
   const [file, setFile] = useState(() => {
@@ -29,7 +28,7 @@ function AddFav() {
       return JSON.parse(localFetch);
     }
   });
-
+  console.log(file[0].selectedOption);
   const fetchedApi = async (term) => {
     const res = await fetch(`https://api.npms.io/v2/search?q=${term}`);
     const packArr = await res.json();
@@ -63,10 +62,20 @@ function AddFav() {
     localStorage.setItem("data", JSON.stringify(file));
   }, [file]);
 
+  //! check already package exist or not
+  function check(option) {
+    // let duplication = false;
+    for (let i = 0; i < file.length; i++) {
+      if (file[i].selectedOption === option) {
+        return -1;
+      }
+    }
+  }
+
   // !handle submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedOption === "") {
+    if (selectedOption === "" || check(selectedOption)) {
       setMsg("You cant Add this Item into the List");
       setShowModal(true);
       return;
